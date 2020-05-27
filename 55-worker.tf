@@ -1,7 +1,7 @@
 # worker
 
 module "worker" {
-  source = "github.com/mzcdev/terraform-aws-asg?ref=v0.12.1"
+  source = "github.com/mzcdev/terraform-aws-asg?ref=v0.12.21"
   # source = "../terraform-aws-asg"
 
   name = var.name
