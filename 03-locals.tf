@@ -23,11 +23,6 @@ EOF
 locals {
   default_tags = [
     {
-      key                 = "Name"
-      value               = var.name
-      propagate_at_launch = true
-    },
-    {
       key                 = "KubernetesCluster"
       value               = var.cluster_name
       propagate_at_launch = true
