@@ -21,34 +21,36 @@ EOF
 }
 
 locals {
-  worker_tags = concat(
-    [
-      {
-        key                 = "Name"
-        value               = var.name
-        propagate_at_launch = true
-      },
-      {
-        key                 = "KubernetesCluster"
-        value               = var.cluster_name
-        propagate_at_launch = true
-      },
-      {
-        key                 = "kubernetes.io/cluster/${var.cluster_name}"
-        value               = "owned"
-        propagate_at_launch = true
-      },
-      {
-        key                 = "k8s.io/cluster-autoscaler/${var.cluster_name}"
-        value               = "owned"
-        propagate_at_launch = true
-      },
-      {
-        key                 = "k8s.io/cluster-autoscaler/enabled"
-        value               = "true"
-        propagate_at_launch = true
-      },
-    ],
-    var.tags,
-  )
+  default_tags = [
+    {
+      key                 = "Name"
+      value               = var.name
+      propagate_at_launch = true
+    },
+    {
+      key                 = "KubernetesCluster"
+      value               = var.cluster_name
+      propagate_at_launch = true
+    },
+    {
+      key                 = "kubernetes.io/cluster/${var.cluster_name}"
+      value               = "owned"
+      propagate_at_launch = true
+    },
+    {
+      key                 = "k8s.io/cluster-autoscaler/${var.cluster_name}"
+      value               = "owned"
+      propagate_at_launch = true
+    },
+    {
+      key                 = "k8s.io/cluster-autoscaler/enabled"
+      value               = "true"
+      propagate_at_launch = true
+    },
+  ]
+
+  # worker_tags = concat(
+  #   local.default_tags,
+  #   var.tags,
+  # )
 }
