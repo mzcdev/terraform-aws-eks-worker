@@ -49,8 +49,8 @@ locals {
     },
   ]
 
-  # worker_tags = concat(
-  #   local.default_tags,
-  #   var.tags,
-  # )
+  worker_tags = concat(
+    local.default_tags,
+    var.tags,
+  )
 }
