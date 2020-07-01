@@ -42,7 +42,7 @@ locals {
     map(
       "key", item,
       "value", element(values(local.merge_tags), index(keys(local.merge_tags), item)),
-      "propagate_at_launch", true
+      "propagate_at_launch", true,
     )
   ]
 }
