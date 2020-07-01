@@ -38,5 +38,5 @@ module "worker" {
 
   security_groups = [aws_security_group.worker.id]
 
-  tags = local.default_tags
+  tags = local.tags
 }
