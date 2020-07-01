@@ -24,6 +24,11 @@ locals {
   worker_tags = concat(
     [
       {
+        key                 = "Name"
+        value               = var.name
+        propagate_at_launch = true
+      },
+      {
         key                 = "KubernetesCluster"
         value               = var.cluster_name
         propagate_at_launch = true
