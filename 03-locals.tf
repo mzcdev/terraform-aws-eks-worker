@@ -33,7 +33,7 @@ locals {
       propagate_at_launch = true
     },
     {
-      key                 = "kubernetes.io/cluster/${var.cluster_name}"
+      key                 = format("%s/%s/%s", "kubernetes.io", "cluster", var.cluster_name)
       value               = "owned"
       propagate_at_launch = true
     },
