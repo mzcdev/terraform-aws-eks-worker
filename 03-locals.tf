@@ -38,12 +38,12 @@ locals {
       propagate_at_launch = true
     },
     {
-      key                 = "k8s.io/cluster-autoscaler/${var.cluster_name}"
+      key                 = format("%s/%s/%s", "k8s.io", "cluster-autoscaler", var.cluster_name)
       value               = "owned"
       propagate_at_launch = true
     },
     {
-      key                 = "k8s.io/cluster-autoscaler/enabled"
+      key                 = format("%s/%s/%s", "k8s.io", "cluster-autoscaler", "enabled")
       value               = "true"
       propagate_at_launch = true
     },
